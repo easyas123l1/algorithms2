@@ -2,11 +2,10 @@
 Input: an integer
 Returns: an integer
 '''
+from collections import defaultdict
 
 
-def eating_cookies(n, cache=None):
-    if cache is None:
-        cache = {}
+def eating_cookies(n, cache=defaultdict(int)):
     if n == 0:
         return 1
     if n == 1:
