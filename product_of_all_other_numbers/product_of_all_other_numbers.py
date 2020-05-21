@@ -6,16 +6,23 @@ Returns: a List of integers
 
 def product_of_all_other_numbers(arr):
     # Your code here
+    string = ''
     result = [0] * len(arr)
+
+    for i in arr:
+        string += '*' + str(i)
+    length = 0
+    string = string[1:]
     for i in range(len(arr)):
-        total = None
-        for j in range(len(arr)):
-            if j != i:
-                if total is None:
-                    total = arr[j]
-                else:
-                    total *= arr[j]
-        result[i] = total
+        number = len(str(arr[i])) + 1
+        first = string[:length]
+        second = string[length+number:]
+        final = first+second
+        result[i] = eval(final)
+        if i == 0:
+            number -= 1
+        length += number
+
     return result
 
 
