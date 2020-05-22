@@ -6,9 +6,9 @@ Returns: a List of integers
 
 def sliding_window_max(nums, k):
     # Your code here
-    result = []
+    result = [0] * (len(nums) - k + 1)
     for i in range(len(nums)-k+1):
-        result.append(max(nums[i:i+k]))
+        result[i] = max(nums[i:i+k])
     return result
 
 
